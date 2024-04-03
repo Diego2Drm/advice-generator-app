@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+:root {
+  /* Colors */
+  /* Primary */
+  --Light-Cyan: #cee3e9;
+  --Neon-Green: #52ffa8;
+
+  /*  Neutral */
+  --Grayish-Blue: #4e5d73;
+  --Dark-Grayish-Blue: #323a49;
+  --Dark-Blue: #1f2632;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Manrope", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: var(--Dark-Blue);
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  background: var(--Dark-Grayish-Blue);
+  width: 35rem;
+  height: 50rem;
+  border-radius: 2rem;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.container h2 {
+  color: var(--Neon-Green);
+  margin: 2rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+}
+
+.container h2 span {
+  font-size: 1.4rem;
+}
+
+.container p {
+  color: var(--Light-Cyan);
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+
+.container div {
+  background: url(./images/pattern-divider-mobile.svg) no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 7rem;
+  width: 80%;
+  height: 3rem;
+
+}
+
+.container button {
+  background-color: var(--Neon-Green);
+  position: absolute;
+  bottom: -3rem;
+  padding: 2rem;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 50%;
+  border: none;
+
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 70rem;
+    height: 40rem;
+    padding: 2rem 3rem;
+  }
+
+  .container div {
+    background: url(./images/pattern-divider-desktop.svg) no-repeat;
+    background-size: contain;
+  }
+
+  .container button img {
+
+    animation: rotate 2000ms infinite linear;
+    animation-play-state: paused;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .container button:hover {
+    box-shadow: 0 0 3rem var(--Neon-Green);
+    cursor: pointer;
+
+  }
+
+  .container button:hover img {
+    animation-play-state: running;
+
+  }
+}
